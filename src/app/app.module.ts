@@ -10,6 +10,8 @@ import { AuthorsComponent } from './authors/authors.component';
 import { CoursesServices } from './cousrses.service';
 import { AuthorsService } from './authors.service';
 import { summaryPipe } from './summary.pipe';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { TitleCasePipe } from './title-case.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { summaryPipe } from './summary.pipe';
     CoursesComponent,
     CourseComponent,
     AuthorsComponent,
-    summaryPipe
+    summaryPipe,
+    FavoriteComponent,
+    TitleCasePipe
   ],
   imports: [
     BrowserModule,
