@@ -21,6 +21,8 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCoursecomponentComponent } from './new-coursecomponent/new-coursecomponent.component';
 import { PostsComponent } from './posts/posts.component';
 import { AppError } from './common/app-error';
+import { GithubFollowersService } from './services/github-followers.service';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { AppError } from './common/app-error';
     LikeComponent,
     NewCoursecomponentComponent,
     PostsComponent,
+    GithubFollowersComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { AppError } from './common/app-error';
     HttpModule
   ],
   providers: [
+    GithubFollowersService,
     PostService,
     CoursesServices ,
     AuthorsService,
