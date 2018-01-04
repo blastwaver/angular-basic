@@ -1,8 +1,11 @@
-
+import { AppErrorHandler } from './common/app-error-handler';
+import { ErrorHandler } from '@angular/core';
+import { PostService } from './services/post.service';
 import { CoursesComponent } from './courses.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http'
 
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
@@ -15,6 +18,9 @@ import { TitleCasePipe } from './title-case.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { NewCoursecomponentComponent } from './new-coursecomponent/new-coursecomponent.component';
+import { PostsComponent } from './posts/posts.component';
+import { AppError } from './common/app-error';
 
 
 @NgModule({
@@ -29,15 +35,20 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     TitleCasePipe,
     PanelComponent,
     LikeComponent,
+    NewCoursecomponentComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
+    PostService,
     CoursesServices ,
-    AuthorsService
+    AuthorsService,
+    {provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]
 })
